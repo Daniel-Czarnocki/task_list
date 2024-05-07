@@ -1,18 +1,9 @@
 {
-    const tasks = [
-        /*{
-            content: "nagrać lekcję",
-            done: false,
-        },
-        {
-            content: "zjeść pierogi",
-            done: true,
-        },*/
-    ];
+    const tasks = [];
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
-            content: newTaskContent,
+            content: newTaskContent
         });
         render();
     };
@@ -30,17 +21,19 @@
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
-        removeButtons.forEach((removeButton, index) => {
+        removeButtons.forEach((removeButton, taskIndex) => {
             removeButton.addEventListener("click", () => {
-                removeTask(index);
+                removeTask(taskIndex);
+                
             });
         });
 
-        const toggleDoneButtons = document.querySelectorAll(".js-done");
+        const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
 
-        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
             toggleDoneButton.addEventListener("click", () => {
-                toggleTaskDone(index);
+                toggleTaskDone(taskIndex);
+                
             });
         });
     };
@@ -51,11 +44,18 @@
         for (const task of tasks) {
             htmlString += `
             <li
-                class="tasks__item${task.done ? " tasks__item--done" : ""}"
+                class="tasksList__item js-task"
             >
-                <button class="js-done">zrobione?</button>
-                <button class="js-remove">usuń</button>
-                ${task.content}
+                <button class="tasksList__button tasksList__button--done js-toggleDone">   
+                    ${task.done ? "&#x2713;" : "&nbsp;"}
+                </button>
+                <span class="tasksList__wording${task.done ? " tasksList__wording--done" : ""}">
+                    ${task.content}
+                </span>
+                <button class="tasksList__button tasksList__button--remove js-remove">
+                    "&#x1f5d1;"
+                </button>
+                
             </li>
             `;
         }
@@ -68,20 +68,21 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const newTaskElement = document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
 
-        if (newTaskContent === "") {
-            return;
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
         }
 
-        addNewTask(newTaskContent);
+        newTaskElement.focus();
     };
 
     const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
-
         form.addEventListener("submit", onFormSubmit);
     };
 
