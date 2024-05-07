@@ -8,14 +8,21 @@
         render();
     };
 
+    const formFocus = () => {
+        const newTaskInput = document.querySelector(".js-newTask");
+        newTaskInput.focus();
+    };
+
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
         render();
+        formFocus();
     };
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
+        formFocus();
     };
 
     const bindEvents = () => {
@@ -76,8 +83,10 @@
             newTaskElement.value = "";
         }
 
-        newTaskElement.focus();
+        formFocus();
     };
+
+    
 
     const init = () => {
         render();
