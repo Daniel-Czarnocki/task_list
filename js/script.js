@@ -60,7 +60,7 @@
                     ${task.content}
                 </span>
                 <button class="tasksList__button tasksList__button--remove js-remove">
-                    "&#x1f5d1;"
+                    &#x1f5d1;
                 </button>
                 
             </li>
