@@ -9,9 +9,10 @@
     <link rel="icon" href="images/title.png">
     <meta property="og:image" content="images/share.jpg">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
     <link href="css/container.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    
+    <link href="css/section.css" rel="stylesheet">
     <link href="css/tasks.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -19,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <script src="js/script.js" defer></script>
+    <script defer src="js/script.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -29,27 +30,29 @@
             <h1>Lista zadań</h1>
         </header>
 
-        <section class="tasksForm">
-            <div class="tasksForm__header">
-                <h2> Dodaj nowe zadanie </h2>
+        <section class="section">
+            <h2 class="section__header">Dodaj nowe zadanie</h2>
+            <div class="section__body">
+                <form class="form js-form">
+                    <input class="form__input js-newTask" autofocus placeholder="Co jest do zrobienia?">
+                    <button class="form__button">Dodaj zadanie</button>
+                </form>
             </div>
 
-            <form class="js-form tasksForm__body">
-                <input class="js-newTask tasksForm__field" autofocus>
-                <button class="tasksForm__button">Dodaj zadanie</button>
-            </form>
-
         </section>
-        
-        <section class="tasksList">
-            <div class="tasksList__body">
-                <h2 class="tasksList__header">Lista zadań</h2>
-        
-                <ul class="tasksList__added js-tasks"></ul>
+
+        <section class="section">
+            <header class="section__header">
+            <h2 class="section__title">Lista zadań</h2>
+                <div id="headerButtons" class="buttons"></div>
+            </header>
+            <div class="section__body">
+                <ul class = "tasks js-tasks"></ul>
             </div>
         </section>
-
     </main>
 </body>
+
+
 
 </html>
