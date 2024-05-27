@@ -1,63 +1,61 @@
-.tasksList {
-    margin: 20px 0px 0px 0px;
-    
-    background: rgb(255, 255, 255);
-    border: 1px solid rgb(220, 220, 220);
-}
-
-.tasksList__header {
-    margin-bottom: 0px;
-    padding: 20px;
-    margin: 0px;
-    border-bottom: 1px solid rgb(220, 220, 220);  
-}
-
-.tasksList__body {
-    padding: 0px 0px 20px;
-    border: 1px solid rgb(220, 220, 220);
-}
-
-.tasksList__added {
+.tasks {
     list-style: none;
     padding: 0px;
     margin: 0px;
-    
-} 
-  
-.tasksList__item {
-    margin: 0px 20px;
-    padding: 20px 10px;
-    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.tasks__item {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    grid-gap: 20px;  
+    grid-gap: 20px;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgb(220, 220, 220); 
 }
 
-.tasksList__item--hidden {
-    display: none; 
+.tasks__item--hidden {
+    display: none;
 }
 
-.tasksList__wording {
+.tasks__content {
     text-decoration: none;
 }
-.tasksList__wording--done {
+
+.tasks__content--done {
     text-decoration: line-through;
 }
 
-.tasksList__button {
+.tasks__button {
+    border: none;
     color: aliceblue;
-    padding: 0px; 
-    border: 0px;
-    height: 35px;
-    width: 35px;   
+    padding: 0px;
+    height: 30px;
+    width: 30px;
 }
 
-.tasksList__button--done {
-    background-color: green; 
+.tasks__button--toggleDone {
+    background-color: green;
 }
 
-.tasksList__button--remove {
+.tasks__button--toggleDone:hover {
+    background-color: rgb(0, 148, 0);
+}
+
+.tasks__button--toggleDone:active {
+    background-color: rgb(0, 168, 0);
+}
+
+.tasks__button--remove {
     background-color: red;
 }
+
+.tasks__button--remove:hover {
+    background-color: rgb(255, 20, 20);
+}
+
+.tasks__button--remove:active {
+    background-color: rgb(252, 40, 40);
+}
+
+
 
