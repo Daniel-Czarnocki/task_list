@@ -1,7 +1,6 @@
 .container {
-    display: block;
     max-width: 820px;
     margin: 0 auto;
-    word-break: break-word;
     padding: 20px;
+    word-break: break-word;
 }
