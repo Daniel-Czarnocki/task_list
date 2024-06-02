@@ -6,11 +6,11 @@
 
 @media (max-width: 819px) {
     .form {
-        grid-template-columns: 1fr;
+        grid-template-columns: none;
     }
 }
 
-.form__input {
+.form__textbox {
     padding: 10px;
     margin: 1px solid rgb(220, 220, 220);
 }
