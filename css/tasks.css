@@ -9,7 +9,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     grid-gap: 20px;
-    padding: 20px 10px;
+    padding: 20px 0px;
     border-bottom: 1px solid rgb(220, 220, 220); 
 }
 
@@ -17,11 +17,11 @@
     display: none;
 }
 
-.tasks__content {
+.tasks_wording {
     text-decoration: none;
 }
 
-.tasks__content--done {
+.tasks_wording--done {
     text-decoration: line-through;
 }
 
@@ -31,6 +31,7 @@
     padding: 0px;
     height: 30px;
     width: 30px;
+    transition: color 0.25s;
 }
 
 .tasks__button--toggleDone {
@@ -50,11 +51,11 @@
 }
 
 .tasks__button--remove:hover {
-    background-color: rgb(255, 20, 20);
+    background-color: rgb(200, 0, 0);
 }
 
 .tasks__button--remove:active {
-    background-color: rgb(252, 40, 40);
+    background-color: rgb(150, 0, 0);
 }
 
 
