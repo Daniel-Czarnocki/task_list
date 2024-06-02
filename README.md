@@ -16,5 +16,6 @@ Hello, this is an easy-to-use application that allows you to create task lists, 
 
 ### Technologies used
 - HTML
-- CSS with BEM and Grid used
+- CSS with BEM, Flex and Grid used
 - JavaScript with ES6+ features
+- Immutability
